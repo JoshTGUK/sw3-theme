@@ -35,7 +35,7 @@ function sw3_enqueue_styles() {
     );
 
     // Global styles
-    wp_enqueue_style( 'sw3-global',    $theme_dir . '/css/global.css',    array( 'sw3-google-fonts' ), $theme_version );
+    wp_enqueue_style( 'sw3-global',    $theme_dir . '/css/global.css',    array( 'sw3-satoshi' ), $theme_version );
     wp_enqueue_style( 'sw3-sections',  $theme_dir . '/css/sections.css',  array( 'sw3-global' ),       $theme_version );
     wp_enqueue_style( 'sw3-animations',$theme_dir . '/css/animations.css',array( 'sw3-sections' ),     $theme_version );
 }
