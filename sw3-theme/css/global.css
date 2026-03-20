@@ -1,0 +1,314 @@
+/* ══════════════════════════════════════════════════════════
+   GLOBAL CSS — Reset, typography, layout utilities
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Reset ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: auto; /* ScrollSmoother handles smooth scroll */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--sw3-text);
+    background: var(--sw3-navy);
+    overflow-x: hidden;
+}
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--sw3-gold);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--sw3-amber);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--sw3-white);
+}
+
+
+/* ── Layout ── */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ScrollSmoother wrapper — must be full height */
+#smooth-wrapper {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* When ScrollSmoother is NOT initialised (mobile), reset wrapper */
+body.no-smooth-scroll #smooth-wrapper {
+    overflow: visible;
+    position: static;
+}
+
+body.no-smooth-scroll #smooth-content {
+    overflow: visible;
+}
+
+
+/* ── Sections ── */
+.sw3-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.sw3-section__inner {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 24px;
+}
+
+
+/* ── Buttons ── */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-main);
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn--primary {
+    background: var(--sw3-gold);
+    color: var(--sw3-navy);
+}
+
+.btn--primary:hover {
+    background: var(--sw3-amber);
+    color: var(--sw3-navy);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(240, 165, 0, 0.3);
+}
+
+.btn--large {
+    padding: 18px 40px;
+    font-size: 18px;
+}
+
+.btn--outline {
+    background: transparent;
+    color: var(--sw3-gold);
+    border: 2px solid var(--sw3-gold);
+}
+
+.btn--outline:hover {
+    background: var(--sw3-gold);
+    color: var(--sw3-navy);
+}
+
+
+/* ── Skip Link (accessibility) ── */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--sw3-gold);
+    color: var(--sw3-navy);
+    padding: 12px 24px;
+    border-radius: 0 0 8px 8px;
+    font-weight: 700;
+    z-index: 10000;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+
+/* ── Page template (index.php fallback) ── */
+.sw3-page {
+    padding-top: calc(var(--nav-height) + 40px);
+    min-height: 100vh;
+}
+
+.sw3-page__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.sw3-page__inner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+}
+
+
+/* ── Footer ── */
+.sw3-footer {
+    background: #060d18;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 60px 0 30px;
+}
+
+.sw3-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.sw3-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.sw3-footer__heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--sw3-white);
+    margin-bottom: 16px;
+}
+
+.sw3-footer__col p {
+    font-size: 14px;
+    color: var(--sw3-text-muted);
+    line-height: 1.6;
+}
+
+.sw3-footer__col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sw3-footer__col a {
+    font-size: 14px;
+    color: var(--sw3-text-muted);
+}
+
+.sw3-footer__col a:hover {
+    color: var(--sw3-gold);
+}
+
+.sw3-footer__cta {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 20px;
+    background: var(--sw3-gold);
+    color: var(--sw3-navy);
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+.sw3-footer__badges {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 24px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 24px;
+}
+
+.sw3-footer__badge {
+    font-size: 12px;
+    color: var(--sw3-text-muted);
+    padding: 6px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.sw3-footer__bottom {
+    text-align: center;
+}
+
+.sw3-footer__bottom p {
+    font-size: 13px;
+    color: var(--sw3-text-muted);
+}
+
+
+/* ── Progress dots (desktop sidebar navigation) ── */
+.sw3-progress {
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sw3-progress__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.sw3-progress__dot:hover {
+    border-color: var(--sw3-gold);
+    transform: scale(1.3);
+}
+
+.sw3-progress__dot.is-active {
+    background: var(--sw3-gold);
+    border-color: var(--sw3-gold);
+    transform: scale(1.2);
+}
+
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .sw3-footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sw3-footer__grid {
+        grid-template-columns: 1fr;
+    }
+}

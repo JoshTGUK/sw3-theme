@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# WordPress (we only track the theme, not WP core)
+# If this repo only contains the theme, this section is informational
+
+# Node (if we add build tools later)
+node_modules/
+package-lock.json
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log

@@ -1,0 +1,724 @@
+/* ══════════════════════════════════════════════════════════
+   SECTIONS CSS — Visual styles for all 7 homepage sections
+   No animations here — just colours, positioning, typography.
+   ══════════════════════════════════════════════════════════ */
+
+
+/* ========================================
+   SECTION 2: THE SUN'S POWER
+   ======================================== */
+.sw3-section--sun {
+    background: var(--sw3-navy);
+    position: relative;
+}
+
+.sw3-section--sun .sw3-section__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.sun-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sun-rays-container {
+    position: relative;
+    z-index: 1;
+}
+
+.sun-rays-svg .sun-ray {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+}
+
+.sun-stats {
+    position: relative;
+    z-index: 2;
+}
+
+.sun-stats__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 12px;
+}
+
+.sun-stats__subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--sw3-text-muted);
+    max-width: 500px;
+    margin: 0 auto 48px;
+}
+
+.sun-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 800px;
+}
+
+.sun-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.sun-stat .counter {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 900;
+    color: var(--sw3-gold);
+    line-height: 1;
+}
+
+.sun-stat__unit {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--sw3-gold);
+}
+
+.sun-stat__label {
+    font-size: 0.85rem;
+    color: var(--sw3-text-muted);
+    max-width: 180px;
+}
+
+/* Horizontal scroll services */
+.sun-services-wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    margin-top: 40px;
+}
+
+.sun-services {
+    display: flex;
+    gap: 24px;
+    padding: 20px 0;
+}
+
+.sun-service-card {
+    flex: 0 0 300px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: left;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.sun-service-card:hover {
+    border-color: rgba(240, 165, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sun-service-card__icon {
+    margin-bottom: 16px;
+}
+
+.sun-service-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.sun-service-card p {
+    font-size: 0.9rem;
+    color: var(--sw3-text-muted);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.sun-service-card__link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--sw3-gold);
+}
+
+.sun-service-card__link:hover {
+    color: var(--sw3-amber);
+}
+
+
+/* ========================================
+   SECTION 3: CAPTURING THE LIGHT
+   ======================================== */
+.sw3-section--capture {
+    background: linear-gradient(180deg, var(--sw3-navy) 0%, #0d1f35 100%);
+}
+
+.sw3-section--capture .sw3-section__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 48px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.capture-photons {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.capture-panel-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.capture-panel {
+    filter: drop-shadow(0 4px 30px rgba(26, 58, 92, 0.5));
+}
+
+.capture-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+}
+
+.capture-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 16px;
+}
+
+.capture-text {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: var(--sw3-text-muted);
+    line-height: 1.7;
+}
+
+.capture-diagram-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    width: 100%;
+}
+
+
+/* ========================================
+   SECTION 4: ENERGY FLOWS HOME
+   ======================================== */
+.sw3-section--flow {
+    background: var(--sw3-navy);
+}
+
+.sw3-section--flow .sw3-section__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.flow-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.flow-subtitle {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: var(--sw3-text-muted);
+    max-width: 550px;
+}
+
+.flow-illustration-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    width: 100%;
+}
+
+.flow-illustration {
+    width: 100%;
+    height: auto;
+}
+
+/* Energy path initial state */
+.flow-energy-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+
+.energy-particle {
+    opacity: 0;
+}
+
+
+/* ========================================
+   SECTION 5: STORAGE & INDEPENDENCE
+   ======================================== */
+.sw3-section--storage {
+    position: relative;
+    background: var(--sw3-navy);
+}
+
+.storage-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--sw3-amber) 0%, var(--sw3-navy) 100%);
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    z-index: 0;
+}
+
+.storage-sky {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.storage-moon {
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #e8e8d0;
+    box-shadow: 0 0 20px 5px rgba(232, 232, 208, 0.2);
+    opacity: 0;
+}
+
+.storage-star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--sw3-white);
+    opacity: 0;
+}
+
+.storage-star--1 { top: 8%; left: 20%; }
+.storage-star--2 { top: 15%; left: 45%; }
+.storage-star--3 { top: 5%; right: 30%; }
+.storage-star--4 { top: 20%; left: 10%; }
+.storage-star--5 { top: 12%; right: 10%; }
+.storage-star--6 { top: 25%; left: 35%; }
+.storage-star--7 { top: 6%; left: 60%; }
+.storage-star--8 { top: 18%; right: 25%; }
+
+.storage-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+}
+
+.storage-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.storage-subtitle {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: var(--sw3-text-muted);
+    max-width: 550px;
+}
+
+.storage-main {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.storage-battery-wrap {
+    position: relative;
+}
+
+.storage-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: left;
+}
+
+.storage-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.storage-stat .counter {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--sw3-green);
+    line-height: 1;
+}
+
+.storage-stat__unit {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--sw3-green);
+}
+
+.storage-stat__label {
+    font-size: 0.9rem;
+    color: var(--sw3-text-muted);
+}
+
+.storage-brands {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.storage-brand {
+    padding: 16px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.storage-brand__logo {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--sw3-text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   SECTION 6: IMPACT & SAVINGS
+   ======================================== */
+.sw3-section--impact {
+    background: linear-gradient(180deg, var(--sw3-navy) 0%, #0d1a2e 100%);
+}
+
+.sw3-section--impact .sw3-section__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 60px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.impact-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+/* Counter cards */
+.impact-counters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.impact-counter {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.impact-counter__symbol {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--sw3-gold);
+}
+
+.impact-counter__number {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 900;
+    color: var(--sw3-gold);
+    line-height: 1;
+}
+
+.impact-counter__unit {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--sw3-gold);
+}
+
+.impact-counter__label {
+    font-size: 0.85rem;
+    color: var(--sw3-text-muted);
+}
+
+/* Before/After split */
+.impact-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+.impact-split__before,
+.impact-split__after {
+    padding: 40px 32px;
+}
+
+.impact-split__before {
+    background: rgba(255, 50, 50, 0.08);
+    border: 1px solid rgba(255, 50, 50, 0.15);
+    border-radius: 16px 0 0 16px;
+}
+
+.impact-split__after {
+    background: rgba(46, 204, 113, 0.08);
+    border: 1px solid rgba(46, 204, 113, 0.15);
+    border-radius: 0 16px 16px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.impact-split h3 {
+    font-size: 1rem;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.impact-split__before h3 {
+    color: #ff6b6b;
+}
+
+.impact-split__after h3 {
+    color: var(--sw3-green);
+}
+
+.impact-bill {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.impact-bill__amount {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--sw3-white);
+}
+
+.impact-bill__label {
+    font-size: 0.85rem;
+    color: var(--sw3-text-muted);
+}
+
+.impact-bill__trend {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.impact-bill__trend--up {
+    color: #ff6b6b;
+}
+
+.impact-bill__trend--down {
+    color: var(--sw3-green);
+}
+
+/* Testimonials */
+.impact-testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.impact-testimonial {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: left;
+}
+
+.impact-testimonial blockquote p {
+    font-size: 0.95rem;
+    color: var(--sw3-text);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.impact-testimonial cite {
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+}
+
+.impact-testimonial cite strong {
+    font-size: 0.9rem;
+    color: var(--sw3-white);
+}
+
+.impact-testimonial cite span {
+    font-size: 0.8rem;
+    color: var(--sw3-text-muted);
+}
+
+.impact-cta {
+    margin-top: 20px;
+}
+
+
+/* ========================================
+   SECTION 7: THE FUTURE
+   ======================================== */
+.sw3-section--future {
+    position: relative;
+    background: var(--sw3-navy);
+}
+
+.future-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--sw3-navy) 0%, #1a1040 40%, var(--sw3-sky-dawn) 100%);
+    opacity: 0;
+    z-index: 0;
+}
+
+.sw3-section--future .sw3-section__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.future-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.future-subtitle {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: var(--sw3-text-muted);
+    max-width: 500px;
+}
+
+.future-community-wrap {
+    max-width: 800px;
+    width: 100%;
+}
+
+.future-community {
+    width: 100%;
+    height: auto;
+}
+
+.future-counter {
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    color: var(--sw3-text);
+}
+
+.future-counter .counter {
+    font-weight: 900;
+    color: var(--sw3-gold);
+    font-size: 1.5em;
+}
+
+.future-cta {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 48px 40px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.future-cta h3 {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+}
+
+.future-cta p {
+    color: var(--sw3-text-muted);
+    margin-bottom: 24px;
+}
+
+.future-cta__phone {
+    margin-top: 16px;
+    font-size: 0.9rem;
+}
+
+.future-cta__phone a {
+    color: var(--sw3-gold);
+    font-weight: 600;
+}
+
+
+/* ========================================
+   RESPONSIVE — All Sections
+   ======================================== */
+@media (max-width: 768px) {
+    .sun-stats__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .sun-services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sun-service-card {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .impact-counters {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .impact-split {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-split__before {
+        border-radius: 16px 16px 0 0;
+    }
+
+    .impact-split__after {
+        border-radius: 0 0 16px 16px;
+    }
+
+    .impact-testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .storage-main {
+        flex-direction: column;
+    }
+
+    .storage-stats {
+        text-align: center;
+    }
+
+    .future-cta {
+        padding: 32px 24px;
+    }
+}
