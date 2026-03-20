@@ -114,4 +114,64 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+
+    // ══════════════════════════════════════════
+    // GSAP — Energy flow animation
+    // ══════════════════════════════════════════
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin);
+
+        const flowSvg = document.getElementById('energy-flow-svg');
+        if (flowSvg) {
+            // Energy path trace
+            const energyPath = flowSvg.querySelector('#energy-path');
+            if (energyPath) {
+                gsap.from(energyPath, {
+                    drawSVG: '0%',
+                    duration: 1,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '#section-energy-flow',
+                        start: 'top 60%',
+                        end: 'center center',
+                        scrub: 1
+                    }
+                });
+            }
+
+            // Room illumination
+            const rooms = flowSvg.querySelectorAll('.flow-room');
+            rooms.forEach((room, i) => {
+                gsap.to(room, {
+                    opacity: 0.35,
+                    fill: '#00C853',
+                    duration: 0.5,
+                    delay: i * 0.3,
+                    scrollTrigger: {
+                        trigger: '#section-energy-flow',
+                        start: 'top 40%'
+                    }
+                });
+            });
+
+            // Energy dot pulses
+            const dots = flowSvg.querySelectorAll('.energy-dot');
+            dots.forEach((dot, i) => {
+                gsap.to(dot, {
+                    opacity: 1,
+                    scale: 1.5,
+                    repeat: -1,
+                    yoyo: true,
+                    duration: 1 + Math.random(),
+                    delay: i * 0.2,
+                    ease: 'sine.inOut',
+                    scrollTrigger: {
+                        trigger: '#section-energy-flow',
+                        start: 'top 50%'
+                    }
+                });
+            });
+        }
+    }
 });

@@ -54,8 +54,14 @@ function sw3_enqueue_scripts() {
     $theme_version = wp_get_theme()->get( 'Version' );
     $theme_dir     = get_template_directory_uri();
 
-    // Single JS file — scroll reveal, counters, nav, menu
-    wp_enqueue_script( 'sw3-main', $theme_dir . '/js/gsap-init.js', array(), $theme_version, true );
+    // GSAP core + ScrollTrigger for energy flow animation
+    wp_enqueue_script( 'gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js', array(), '3.13.0', true );
+    wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js', array( 'gsap' ), '3.13.0', true );
+    wp_enqueue_script( 'gsap-draw', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js', array( 'gsap' ), '3.13.0', true );
+    wp_enqueue_script( 'gsap-mp', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js', array( 'gsap' ), '3.13.0', true );
+
+    // Main JS — scroll reveal, counters, nav, energy flow animation
+    wp_enqueue_script( 'sw3-main', $theme_dir . '/js/gsap-init.js', array( 'gsap', 'gsap-st', 'gsap-draw', 'gsap-mp' ), $theme_version, true );
 }
 add_action( 'wp_enqueue_scripts', 'sw3_enqueue_scripts' );
 
