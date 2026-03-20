@@ -34,10 +34,7 @@ function sw3_enqueue_styles() {
         null
     );
 
-    // Global styles — NO dependencies between them (prevents cascade failure)
-    wp_enqueue_style( 'sw3-global',     $theme_dir . '/css/global.css',     array(), $theme_version );
-    wp_enqueue_style( 'sw3-sections',   $theme_dir . '/css/sections.css',   array(), $theme_version );
-    wp_enqueue_style( 'sw3-animations', $theme_dir . '/css/animations.css', array(), $theme_version );
+    // All CSS is inlined via critical.css in wp_head — no external stylesheets needed
 }
 add_action( 'wp_enqueue_scripts', 'sw3_enqueue_styles' );
 
