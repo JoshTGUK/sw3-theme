@@ -48,35 +48,19 @@ get_header();
             <a href="/contact/" class="hero-cta btn btn--primary" data-animate>Get Your Free Quote</a>
         </div>
 
-        <!-- Trust badges -->
+        <!-- Trust badges (real images) -->
         <div class="hero-badges" data-animate aria-label="Accreditations">
             <div class="hero-badge">
-                <svg viewBox="0 0 60 60" width="50" height="50" aria-hidden="true">
-                    <circle cx="30" cy="30" r="28" fill="none" stroke="var(--sw3-gold)" stroke-width="2"/>
-                    <text x="30" y="28" text-anchor="middle" fill="var(--sw3-white)" font-size="8" font-weight="700">MCS</text>
-                    <text x="30" y="40" text-anchor="middle" fill="var(--sw3-gold)" font-size="6">Certified</text>
-                </svg>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/badge-which.webp" alt="Which? Trusted Trader" width="80" height="48" loading="eager">
             </div>
             <div class="hero-badge">
-                <svg viewBox="0 0 60 60" width="50" height="50" aria-hidden="true">
-                    <circle cx="30" cy="30" r="28" fill="none" stroke="var(--sw3-gold)" stroke-width="2"/>
-                    <text x="30" y="28" text-anchor="middle" fill="var(--sw3-white)" font-size="7" font-weight="700">TRUST</text>
-                    <text x="30" y="40" text-anchor="middle" fill="var(--sw3-gold)" font-size="6">Mark</text>
-                </svg>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/badge-checkatrade.webp" alt="Checkatrade" width="120" height="40" loading="eager">
             </div>
             <div class="hero-badge">
-                <svg viewBox="0 0 60 60" width="50" height="50" aria-hidden="true">
-                    <circle cx="30" cy="30" r="28" fill="none" stroke="var(--sw3-gold)" stroke-width="2"/>
-                    <text x="30" y="28" text-anchor="middle" fill="var(--sw3-white)" font-size="6" font-weight="700">TESLA</text>
-                    <text x="30" y="40" text-anchor="middle" fill="var(--sw3-gold)" font-size="6">Certified</text>
-                </svg>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/badge-trustatrader.webp" alt="TrustATrader Trusted Traders" width="80" height="48" loading="eager">
             </div>
             <div class="hero-badge">
-                <svg viewBox="0 0 60 60" width="50" height="50" aria-hidden="true">
-                    <circle cx="30" cy="30" r="28" fill="none" stroke="var(--sw3-gold)" stroke-width="2"/>
-                    <text x="30" y="28" text-anchor="middle" fill="var(--sw3-white)" font-size="7" font-weight="700">RECC</text>
-                    <text x="30" y="40" text-anchor="middle" fill="var(--sw3-gold)" font-size="6">Member</text>
-                </svg>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/badge-trustpilot.webp" alt="Trustpilot" width="110" height="40" loading="eager">
             </div>
         </div>
 
@@ -263,12 +247,12 @@ get_header();
         <div class="capture-diagram-wrap">
             <svg class="capture-diagram" viewBox="0 0 400 250" width="400" height="250" aria-label="How a solar cell works diagram">
                 <!-- Anti-reflective coating -->
-                <path class="diagram-path" d="M50,50 L350,50" fill="none" stroke="var(--sw3-sky-day)" stroke-width="3"/>
+                <path class="diagram-path" d="M50,50 L350,50" fill="none" stroke="var(--sw3-morning-end)" stroke-width="3"/>
                 <text class="diagram-label" x="370" y="55" fill="var(--sw3-white)" font-size="11" opacity="0">Anti-reflective coating</text>
 
                 <!-- Glass layer -->
                 <rect class="diagram-layer" x="50" y="55" width="300" height="25" fill="#87ceeb" opacity="0.3"/>
-                <path class="diagram-path" d="M50,55 L350,55 L350,80 L50,80 Z" fill="none" stroke="var(--sw3-sky-day)" stroke-width="1.5"/>
+                <path class="diagram-path" d="M50,55 L350,55 L350,80 L50,80 Z" fill="none" stroke="var(--sw3-morning-end)" stroke-width="1.5"/>
                 <text class="diagram-label" x="200" y="72" text-anchor="middle" fill="var(--sw3-white)" font-size="10" opacity="0">Glass</text>
 
                 <!-- N-type silicon -->
@@ -418,7 +402,7 @@ get_header();
                         <defs>
                             <linearGradient id="batteryGradient" x1="0" y1="1" x2="0" y2="0">
                                 <stop offset="0%" stop-color="var(--sw3-green)"/>
-                                <stop offset="100%" stop-color="var(--sw3-mint)"/>
+                                <stop offset="100%" stop-color="var(--sw3-green-light)"/>
                             </linearGradient>
                         </defs>
                     </svg>
@@ -645,7 +629,7 @@ get_header();
             <h3>Start Your Solar Journey</h3>
             <p>Get a free, no-obligation quote in 60 seconds.</p>
             <a href="/contact/" class="btn btn--primary btn--large">Get Your Free Quote</a>
-            <p class="future-cta__phone">Or call us: <a href="tel:+441234567890">01234 567 890</a></p>
+            <p class="future-cta__phone">Or call us: <a href="tel:+442045381967">0204 538 1967</a></p>
         </div>
 
     </div>

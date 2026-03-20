@@ -1,5 +1,6 @@
 /* ══════════════════════════════════════════════════════════
-   GLOBAL CSS — Reset, typography, layout utilities
+   GLOBAL CSS — Reset, typography, layout, buttons, footer
+   Uses brand tokens from sw3-branding-outline.md
    ══════════════════════════════════════════════════════════ */
 
 /* ── Reset ── */
@@ -10,17 +11,17 @@
 }
 
 html {
-    scroll-behavior: auto; /* ScrollSmoother handles smooth scroll */
+    scroll-behavior: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    font-family: var(--font-main);
+    font-family: var(--font-body);
     font-size: 16px;
-    line-height: 1.6;
-    color: var(--sw3-text);
-    background: var(--sw3-navy);
+    line-height: 1.7;
+    color: var(--sw3-body);
+    background: var(--sw3-white);
     overflow-x: hidden;
 }
 
@@ -31,23 +32,53 @@ img, svg {
 }
 
 a {
-    color: var(--sw3-gold);
+    color: var(--sw3-green);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 a:hover {
-    color: var(--sw3-amber);
+    color: var(--sw3-green-dark);
 }
 
 ul, ol {
     list-style: none;
 }
 
+/* ── Typography ── */
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
+    font-family: var(--font-display);
+    line-height: 1.15;
+    font-weight: 600;
+    color: var(--sw3-charcoal);
+}
+
+h1 {
+    font-size: clamp(2.25rem, 6vw, 4.5rem);
     font-weight: 700;
-    color: var(--sw3-white);
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+/* Pull quote style */
+.pull-quote {
+    font-family: var(--font-accent);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--sw3-charcoal);
 }
 
 
@@ -55,13 +86,10 @@ h1, h2, h3, h4, h5, h6 {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 48px;
 }
 
-/* ScrollSmoother wrapper
-   DO NOT set position:fixed or overflow:hidden here —
-   ScrollSmoother sets those itself when it initialises.
-   This ensures the page remains scrollable if JS fails. */
+/* ScrollSmoother wrapper — ScrollSmoother sets styles itself */
 #smooth-wrapper,
 #smooth-content {
     /* No restrictive styles — ScrollSmoother takes over on desktop */
@@ -77,25 +105,27 @@ h1, h2, h3, h4, h5, h6 {
 
 .sw3-section__inner {
     position: relative;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 24px;
+    padding: 120px 48px;
 }
 
 
-/* ── Buttons ── */
+/* ── Buttons (per branding guide) ── */
 .btn {
     display: inline-block;
-    padding: 14px 32px;
+    padding: 16px 32px;
+    font-family: var(--font-body);
     font-size: 16px;
-    font-weight: 700;
-    font-family: var(--font-main);
+    font-weight: 600;
+    letter-spacing: 0.02em;
     text-decoration: none;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
     text-align: center;
+    line-height: 1;
 }
 
 .btn--primary {
@@ -106,24 +136,38 @@ h1, h2, h3, h4, h5, h6 {
 .btn--primary:hover {
     background: var(--sw3-amber);
     color: var(--sw3-navy);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(240, 165, 0, 0.3);
+    transform: scale(1.02);
+}
+
+.btn--primary:active {
+    transform: scale(0.98);
+}
+
+.btn--secondary {
+    background: transparent;
+    color: var(--sw3-green);
+    border: 2px solid var(--sw3-green);
+}
+
+.btn--secondary:hover {
+    background: var(--sw3-green);
+    color: var(--sw3-white);
+}
+
+.btn--ghost {
+    background: transparent;
+    color: var(--sw3-green);
+    text-decoration: underline;
+    padding: 8px 0;
+}
+
+.btn--ghost:hover {
+    color: var(--sw3-green-dark);
 }
 
 .btn--large {
     padding: 18px 40px;
     font-size: 18px;
-}
-
-.btn--outline {
-    background: transparent;
-    color: var(--sw3-gold);
-    border: 2px solid var(--sw3-gold);
-}
-
-.btn--outline:hover {
-    background: var(--sw3-gold);
-    color: var(--sw3-navy);
 }
 
 
@@ -137,7 +181,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--sw3-navy);
     padding: 12px 24px;
     border-radius: 0 0 8px 8px;
-    font-weight: 700;
+    font-weight: 600;
     z-index: 10000;
     transition: top 0.2s ease;
 }
@@ -151,105 +195,18 @@ h1, h2, h3, h4, h5, h6 {
 .sw3-page {
     padding-top: calc(var(--nav-height) + 40px);
     min-height: 100vh;
+    background: var(--sw3-white);
 }
 
 .sw3-page__inner {
     max-width: 800px;
     margin: 0 auto;
-    padding: 40px 24px;
+    padding: 40px 48px;
 }
 
 .sw3-page__inner h1 {
     font-size: 2.5rem;
     margin-bottom: 24px;
-}
-
-
-/* ── Footer ── */
-.sw3-footer {
-    background: #060d18;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 60px 0 30px;
-}
-
-.sw3-footer__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.sw3-footer__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.sw3-footer__heading {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--sw3-white);
-    margin-bottom: 16px;
-}
-
-.sw3-footer__col p {
-    font-size: 14px;
-    color: var(--sw3-text-muted);
-    line-height: 1.6;
-}
-
-.sw3-footer__col ul {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.sw3-footer__col a {
-    font-size: 14px;
-    color: var(--sw3-text-muted);
-}
-
-.sw3-footer__col a:hover {
-    color: var(--sw3-gold);
-}
-
-.sw3-footer__cta {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 8px 20px;
-    background: var(--sw3-gold);
-    color: var(--sw3-navy);
-    font-size: 13px;
-    font-weight: 700;
-    border-radius: 6px;
-}
-
-.sw3-footer__badges {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 24px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    margin-bottom: 24px;
-}
-
-.sw3-footer__badge {
-    font-size: 12px;
-    color: var(--sw3-text-muted);
-    padding: 6px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-}
-
-.sw3-footer__bottom {
-    text-align: center;
-}
-
-.sw3-footer__bottom p {
-    font-size: 13px;
-    color: var(--sw3-text-muted);
 }
 
 
@@ -288,11 +245,120 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* ── Footer ── */
+.sw3-footer {
+    background: var(--sw3-navy);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 60px 0 30px;
+}
+
+.sw3-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
+.sw3-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.sw3-footer__heading {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--sw3-white);
+    margin-bottom: 16px;
+}
+
+.sw3-footer__col p {
+    font-size: 14px;
+    color: var(--sw3-grey);
+    line-height: 1.6;
+}
+
+.sw3-footer__col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sw3-footer__col a {
+    font-size: 14px;
+    color: var(--sw3-grey);
+}
+
+.sw3-footer__col a:hover {
+    color: var(--sw3-green-light);
+}
+
+.sw3-footer__cta {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 20px;
+    background: var(--sw3-gold);
+    color: var(--sw3-navy);
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.sw3-footer__cta:hover {
+    background: var(--sw3-amber);
+    color: var(--sw3-navy);
+}
+
+.sw3-footer__badges {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 24px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 24px;
+}
+
+.sw3-footer__badge {
+    font-size: 12px;
+    color: var(--sw3-grey);
+    padding: 6px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.sw3-footer__bottom {
+    text-align: center;
+}
+
+.sw3-footer__bottom p {
+    font-size: 13px;
+    color: var(--sw3-grey);
+}
+
+
 /* ── Responsive ── */
+@media (max-width: 1024px) {
+    .container,
+    .sw3-section__inner,
+    .sw3-footer__inner,
+    .sw3-page__inner {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .sw3-footer__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
+    }
+
+    .sw3-section__inner {
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 }
 

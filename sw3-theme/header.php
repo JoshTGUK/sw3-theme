@@ -16,8 +16,7 @@
     <div class="sw3-nav__inner">
         <!-- Logo -->
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="sw3-nav__logo" aria-label="SW3 Green Energy - Home">
-            <span class="sw3-nav__logo-text">SW3</span>
-            <span class="sw3-nav__logo-sub">Green Energy</span>
+            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.webp" alt="SW3 Green Energy Services" class="sw3-nav__logo-img" width="160" height="48">
         </a>
 
         <!-- Desktop Menu -->

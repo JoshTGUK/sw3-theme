@@ -91,7 +91,7 @@ const SW3Flow = {
             if (!el) return;
 
             tl.to(el, {
-                attr: { fill: '#f0a500' },
+                attr: { fill: '#F9A825' },
                 opacity: 0.7,
                 duration: 0.1,
                 ease: 'power2.in'
@@ -149,7 +149,7 @@ const SW3Flow = {
         // Immediately show the final state
         gsap.set('.flow-energy-path', { drawSVG: '100%' });
         gsap.set('.flow-room', {
-            attr: { fill: '#f0a500' },
+            attr: { fill: '#F9A825' },
             opacity: 0.7
         });
     }

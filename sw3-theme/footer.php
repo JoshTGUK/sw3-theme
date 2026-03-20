@@ -39,8 +39,9 @@
             <!-- Column 4: Contact -->
             <div class="sw3-footer__col">
                 <h3 class="sw3-footer__heading">Contact</h3>
-                <p><a href="tel:+441234567890">01onal 234 567 890</a></p>
-                <p><a href="mailto:info@sw3greenenergy.co.uk">info@sw3greenenergy.co.uk</a></p>
+                <p><a href="tel:+442045381967">0204 538 1967</a></p>
+                <p><a href="tel:+447713260332">0771 326 0332</a></p>
+                <p><a href="mailto:info@sw3greenenergyservices.co.uk">info@sw3greenenergyservices.co.uk</a></p>
                 <a href="/contact/" class="sw3-footer__cta">Get a Free Quote</a>
             </div>
         </div>

@@ -1,6 +1,7 @@
 /* ══════════════════════════════════════════════════════════
    SECTIONS CSS — Visual styles for all 7 homepage sections
    No animations here — just colours, positioning, typography.
+   Updated to SW3 brand 2026 colour system.
    ══════════════════════════════════════════════════════════ */
 
 
@@ -45,13 +46,16 @@
 }
 
 .sun-stats__title {
+    font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--sw3-white);
     margin-bottom: 12px;
 }
 
 .sun-stats__subtitle {
+    font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.15rem);
-    color: var(--sw3-text-muted);
+    color: var(--sw3-grey);
     max-width: 500px;
     margin: 0 auto 48px;
 }
@@ -71,6 +75,7 @@
 }
 
 .sun-stat .counter {
+    font-family: var(--font-display);
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     font-weight: 900;
     color: var(--sw3-gold);
@@ -84,8 +89,9 @@
 }
 
 .sun-stat__label {
+    font-family: var(--font-body);
     font-size: 0.85rem;
-    color: var(--sw3-text-muted);
+    color: var(--sw3-grey);
     max-width: 180px;
 }
 
@@ -108,14 +114,14 @@
     flex: 0 0 300px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 32px 24px;
     text-align: left;
     transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .sun-service-card:hover {
-    border-color: rgba(240, 165, 0, 0.2);
+    border-color: rgba(249, 168, 37, 0.2);
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -124,13 +130,16 @@
 }
 
 .sun-service-card h3 {
+    font-family: var(--font-display);
     font-size: 1.25rem;
+    color: var(--sw3-white);
     margin-bottom: 8px;
 }
 
 .sun-service-card p {
+    font-family: var(--font-body);
     font-size: 0.9rem;
-    color: var(--sw3-text-muted);
+    color: var(--sw3-grey);
     margin-bottom: 16px;
     line-height: 1.5;
 }
@@ -150,7 +159,7 @@
    SECTION 3: CAPTURING THE LIGHT
    ======================================== */
 .sw3-section--capture {
-    background: linear-gradient(180deg, var(--sw3-navy) 0%, #0d1f35 100%);
+    background: linear-gradient(180deg, var(--sw3-navy) 0%, var(--sw3-charcoal) 100%);
 }
 
 .sw3-section--capture .sw3-section__inner {
@@ -176,7 +185,7 @@
 }
 
 .capture-panel {
-    filter: drop-shadow(0 4px 30px rgba(26, 58, 92, 0.5));
+    filter: drop-shadow(0 4px 30px rgba(26, 26, 46, 0.5));
 }
 
 .capture-content {
@@ -186,13 +195,16 @@
 }
 
 .capture-title {
+    font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--sw3-white);
     margin-bottom: 16px;
 }
 
 .capture-text {
+    font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.1rem);
-    color: var(--sw3-text-muted);
+    color: var(--sw3-grey);
     line-height: 1.7;
 }
 
@@ -208,7 +220,7 @@
    SECTION 4: ENERGY FLOWS HOME
    ======================================== */
 .sw3-section--flow {
-    background: var(--sw3-navy);
+    background: var(--sw3-off-white);
 }
 
 .sw3-section--flow .sw3-section__inner {
@@ -222,12 +234,15 @@
 }
 
 .flow-title {
+    font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--sw3-charcoal);
 }
 
 .flow-subtitle {
+    font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.1rem);
-    color: var(--sw3-text-muted);
+    color: var(--sw3-body);
     max-width: 550px;
 }
 
@@ -265,7 +280,7 @@
 .storage-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, var(--sw3-amber) 0%, var(--sw3-navy) 100%);
+    background: linear-gradient(180deg, var(--sw3-dusk) 0%, var(--sw3-navy) 100%);
     opacity: 0;
     transition: opacity 0.1s ease;
     z-index: 0;
@@ -319,12 +334,15 @@
 }
 
 .storage-title {
+    font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--sw3-white);
 }
 
 .storage-subtitle {
+    font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.1rem);
-    color: var(--sw3-text-muted);
+    color: var(--sw3-grey);
     max-width: 550px;
 }
 
@@ -354,6 +372,7 @@
 }
 
 .storage-stat .counter {
+    font-family: var(--font-display);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 900;
     color: var(--sw3-green);
@@ -367,8 +386,9 @@
 }
 
 .storage-stat__label {
+    font-family: var(--font-body);
     font-size: 0.9rem;
-    color: var(--sw3-text-muted);
+    color: var(--sw3-grey);
 }
 
 .storage-brands {
@@ -388,7 +408,7 @@
 .storage-brand__logo {
     font-size: 14px;
     font-weight: 700;
-    color: var(--sw3-text-muted);
+    color: var(--sw3-grey);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -398,7 +418,7 @@
    SECTION 6: IMPACT & SAVINGS
    ======================================== */
 .sw3-section--impact {
-    background: linear-gradient(180deg, var(--sw3-navy) 0%, #0d1a2e 100%);
+    background: var(--sw3-green-wash);
 }
 
 .sw3-section--impact .sw3-section__inner {
@@ -412,7 +432,9 @@
 }
 
 .impact-title {
+    font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--sw3-charcoal);
 }
 
 /* Counter cards */
@@ -425,38 +447,41 @@
 }
 
 .impact-counter {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
+    background: var(--sw3-white);
+    border: 1px solid var(--sw3-green-tint);
+    border-radius: 12px;
     padding: 40px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .impact-counter__symbol {
     font-size: 1.5rem;
     font-weight: 900;
-    color: var(--sw3-gold);
+    color: var(--sw3-green-dark);
 }
 
 .impact-counter__number {
+    font-family: var(--font-display);
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     font-weight: 900;
-    color: var(--sw3-gold);
+    color: var(--sw3-green-dark);
     line-height: 1;
 }
 
 .impact-counter__unit {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--sw3-gold);
+    color: var(--sw3-green-dark);
 }
 
 .impact-counter__label {
+    font-family: var(--font-body);
     font-size: 0.85rem;
-    color: var(--sw3-text-muted);
+    color: var(--sw3-body);
 }
 
 /* Before/After split */
@@ -465,7 +490,7 @@
     grid-template-columns: 1fr 1fr;
     max-width: 700px;
     width: 100%;
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
 }
@@ -478,18 +503,19 @@
 .impact-split__before {
     background: rgba(255, 50, 50, 0.08);
     border: 1px solid rgba(255, 50, 50, 0.15);
-    border-radius: 16px 0 0 16px;
+    border-radius: 12px 0 0 12px;
 }
 
 .impact-split__after {
-    background: rgba(46, 204, 113, 0.08);
-    border: 1px solid rgba(46, 204, 113, 0.15);
-    border-radius: 0 16px 16px 0;
+    background: var(--sw3-green-wash);
+    border: 1px solid var(--sw3-green-tint);
+    border-radius: 0 12px 12px 0;
     position: relative;
     overflow: hidden;
 }
 
 .impact-split h3 {
+    font-family: var(--font-display);
     font-size: 1rem;
     margin-bottom: 16px;
     text-transform: uppercase;
@@ -501,7 +527,7 @@
 }
 
 .impact-split__after h3 {
-    color: var(--sw3-green);
+    color: var(--sw3-green-dark);
 }
 
 .impact-bill {
@@ -511,14 +537,16 @@
 }
 
 .impact-bill__amount {
+    font-family: var(--font-display);
     font-size: 2.5rem;
     font-weight: 900;
-    color: var(--sw3-white);
+    color: var(--sw3-charcoal);
 }
 
 .impact-bill__label {
+    font-family: var(--font-body);
     font-size: 0.85rem;
-    color: var(--sw3-text-muted);
+    color: var(--sw3-body);
 }
 
 .impact-bill__trend {
@@ -544,16 +572,18 @@
 }
 
 .impact-testimonial {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
+    background: var(--sw3-white);
+    border: 1px solid var(--sw3-green-tint);
+    border-radius: 12px;
     padding: 32px 24px;
     text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .impact-testimonial blockquote p {
+    font-family: var(--font-accent);
     font-size: 0.95rem;
-    color: var(--sw3-text);
+    color: var(--sw3-charcoal);
     line-height: 1.6;
     font-style: italic;
     margin-bottom: 16px;
@@ -567,12 +597,12 @@
 
 .impact-testimonial cite strong {
     font-size: 0.9rem;
-    color: var(--sw3-white);
+    color: var(--sw3-charcoal);
 }
 
 .impact-testimonial cite span {
     font-size: 0.8rem;
-    color: var(--sw3-text-muted);
+    color: var(--sw3-grey);
 }
 
 .impact-cta {
@@ -591,7 +621,7 @@
 .future-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, var(--sw3-navy) 0%, #1a1040 40%, var(--sw3-sky-dawn) 100%);
+    background: linear-gradient(180deg, var(--sw3-navy) 0%, var(--sw3-dusk) 40%, var(--sw3-solar-deep) 100%);
     opacity: 0;
     z-index: 0;
 }
@@ -609,12 +639,15 @@
 }
 
 .future-title {
+    font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--sw3-white);
 }
 
 .future-subtitle {
+    font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.1rem);
-    color: var(--sw3-text-muted);
+    color: var(--sw3-grey);
     max-width: 500px;
 }
 
@@ -629,11 +662,13 @@
 }
 
 .future-counter {
+    font-family: var(--font-body);
     font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-    color: var(--sw3-text);
+    color: var(--sw3-white);
 }
 
 .future-counter .counter {
+    font-family: var(--font-display);
     font-weight: 900;
     color: var(--sw3-gold);
     font-size: 1.5em;
@@ -642,19 +677,22 @@
 .future-cta {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
+    border-radius: 12px;
     padding: 48px 40px;
     max-width: 500px;
     width: 100%;
 }
 
 .future-cta h3 {
+    font-family: var(--font-display);
     font-size: 1.75rem;
+    color: var(--sw3-white);
     margin-bottom: 8px;
 }
 
 .future-cta p {
-    color: var(--sw3-text-muted);
+    font-family: var(--font-body);
+    color: var(--sw3-grey);
     margin-bottom: 24px;
 }
 
@@ -699,11 +737,11 @@
     }
 
     .impact-split__before {
-        border-radius: 16px 16px 0 0;
+        border-radius: 12px 12px 0 0;
     }
 
     .impact-split__after {
-        border-radius: 0 0 16px 16px;
+        border-radius: 0 0 12px 12px;
     }
 
     .impact-testimonials {

@@ -19,10 +19,10 @@ function sw3_enqueue_styles() {
     $theme_version = wp_get_theme()->get( 'Version' );
     $theme_dir     = get_template_directory_uri();
 
-    // Google Font — Inter (clean, modern, free)
+    // Google Fonts — Plus Jakarta Sans (headings), Inter (body), DM Serif Display (quotes)
     wp_enqueue_style(
         'sw3-google-fonts',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap',
+        'https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap',
         array(),
         null
     );
