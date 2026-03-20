@@ -1,107 +1,27 @@
-/* ══════════════════════════════════════════════════════════
-   ANIMATIONS CSS — Initial states + reduced motion
+/* ═══════════════════════════════════════════════
+   Animations — simple fade-up for non-hero elements
+   ═══════════════════════════════════════════════ */
 
-   IMPORTANT: Hero content is VISIBLE by default.
-   Only non-hero [data-animate] elements are hidden.
-   This ensures the page is usable even if JS fails.
-   ══════════════════════════════════════════════════════════ */
-
-/* ── Non-hero animated elements start hidden ── */
-#section-sun [data-animate],
-#section-capture [data-animate],
-#section-flow [data-animate],
-#section-storage [data-animate],
-#section-impact [data-animate],
-#section-future [data-animate] {
+[data-animate] {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Diagram labels & paths (Section 3) */
-.diagram-label { opacity: 0; }
-
-.diagram-path {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
+[data-animate].is-visible {
+    opacity: 1;
+    transform: none;
 }
 
-/* Energy particles (Section 4) */
-.energy-particle { opacity: 0; }
-
-/* Community elements (Section 7) */
-.community-house:not(.community-house--main),
-.community-tree { opacity: 0; }
-
-/* Moon and stars (Section 5) */
-.storage-moon,
-.storage-star { opacity: 0; }
-
-/* Battery fill starts at 0 */
-.battery-fill { height: 0; }
-
-
-/* ══════════════════════════════════════════════════════════
-   REDUCED MOTION
-   ══════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
-    #section-sun [data-animate],
-    #section-capture [data-animate],
-    #section-flow [data-animate],
-    #section-storage [data-animate],
-    #section-impact [data-animate],
-    #section-future [data-animate],
-    .diagram-label,
-    .energy-particle,
-    .community-house,
-    .community-tree,
-    .storage-moon,
-    .storage-star {
+    [data-animate] {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
     }
-
-    .diagram-path,
-    .flow-energy-path,
-    .sun-rays-svg .sun-ray {
-        stroke-dashoffset: 0 !important;
-    }
-
-    .battery-fill {
-        height: 280px !important;
-    }
-
-    .flow-room {
-        fill: var(--sw3-gold) !important;
-        opacity: 0.7 !important;
-    }
-
-    .storage-bg { opacity: 0.6 !important; }
-    .future-bg { opacity: 0.4 !important; }
-    .hero-bg__layer--mid { opacity: 0.5 !important; }
-    .hero-bg__layer--glow { opacity: 0.5 !important; }
-
-    .hero-scroll { animation: none !important; }
-
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
 }
 
-/* ── Animation toggle off ── */
-body.animations-off [data-animate],
-body.animations-off .diagram-label,
-body.animations-off .energy-particle,
-body.animations-off .community-house,
-body.animations-off .community-tree,
-body.animations-off .storage-moon,
-body.animations-off .storage-star {
+body.animations-off [data-animate] {
     opacity: 1 !important;
     transform: none !important;
-}
-
-body.animations-off .hero-scroll {
-    animation: none !important;
 }

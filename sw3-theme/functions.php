@@ -58,34 +58,9 @@ add_action( 'wp_head', 'sw3_inline_critical_css', 5 );
 function sw3_enqueue_scripts() {
     $theme_version = wp_get_theme()->get( 'Version' );
     $theme_dir     = get_template_directory_uri();
-    $gsap_version  = '3.13.0';
-    $cdn_base      = 'https://cdn.jsdelivr.net/npm/gsap@' . $gsap_version . '/dist/';
 
-    // ── GSAP Core + Plugins (CDN, pinned version) ──
-    wp_enqueue_script( 'gsap-core',         $cdn_base . 'gsap.min.js',              array(),              $gsap_version, true );
-    wp_enqueue_script( 'gsap-scrolltrigger',$cdn_base . 'ScrollTrigger.min.js',     array( 'gsap-core' ), $gsap_version, true );
-    wp_enqueue_script( 'gsap-scrollsmoother',$cdn_base . 'ScrollSmoother.min.js',   array( 'gsap-core', 'gsap-scrolltrigger' ), $gsap_version, true );
-    wp_enqueue_script( 'gsap-splittext',    $cdn_base . 'SplitText.min.js',         array( 'gsap-core' ), $gsap_version, true );
-    wp_enqueue_script( 'gsap-drawsvg',      $cdn_base . 'DrawSVGPlugin.min.js',     array( 'gsap-core' ), $gsap_version, true );
-    wp_enqueue_script( 'gsap-motionpath',   $cdn_base . 'MotionPathPlugin.min.js',  array( 'gsap-core' ), $gsap_version, true );
-
-    // ── Local Scripts ──
-    wp_enqueue_script( 'sw3-gsap-init',      $theme_dir . '/js/gsap-init.js',       array( 'gsap-core', 'gsap-scrolltrigger', 'gsap-scrollsmoother', 'gsap-splittext', 'gsap-drawsvg', 'gsap-motionpath' ), $theme_version, true );
-    wp_enqueue_script( 'sw3-nav',            $theme_dir . '/js/nav.js',             array( 'sw3-gsap-init' ), $theme_version, true );
-
-    // Section animation scripts (only on front page)
-    if ( is_front_page() ) {
-        $sections = array( 'hero', 'sun', 'capture', 'flow', 'storage', 'impact', 'future' );
-        foreach ( $sections as $section ) {
-            wp_enqueue_script(
-                'sw3-section-' . $section,
-                $theme_dir . '/js/section-' . $section . '.js',
-                array( 'sw3-gsap-init' ),
-                $theme_version,
-                true
-            );
-        }
-    }
+    // Single JS file — scroll reveal, counters, nav, menu
+    wp_enqueue_script( 'sw3-main', $theme_dir . '/js/gsap-init.js', array(), $theme_version, true );
 }
 add_action( 'wp_enqueue_scripts', 'sw3_enqueue_scripts' );
 
