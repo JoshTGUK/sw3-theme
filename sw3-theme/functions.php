@@ -51,7 +51,7 @@ add_action( 'wp_head', 'sw3_inline_critical_css', 5 );
 function sw3_enqueue_scripts() {
     $theme_version = wp_get_theme()->get( 'Version' );
     $theme_dir     = get_template_directory_uri();
-    $gsap_version  = '3.12.7';
+    $gsap_version  = '3.13.0';
     $cdn_base      = 'https://cdn.jsdelivr.net/npm/gsap@' . $gsap_version . '/dist/';
 
     // ── GSAP Core + Plugins (CDN, pinned version) ──

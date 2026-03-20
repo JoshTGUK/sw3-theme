@@ -58,24 +58,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 24px;
 }
 
-/* ScrollSmoother wrapper — must be full height */
-#smooth-wrapper {
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* When ScrollSmoother is NOT initialised (mobile), reset wrapper */
-body.no-smooth-scroll #smooth-wrapper {
-    overflow: visible;
-    position: static;
-}
-
-body.no-smooth-scroll #smooth-content {
-    overflow: visible;
+/* ScrollSmoother wrapper
+   DO NOT set position:fixed or overflow:hidden here —
+   ScrollSmoother sets those itself when it initialises.
+   This ensures the page remains scrollable if JS fails. */
+#smooth-wrapper,
+#smooth-content {
+    /* No restrictive styles — ScrollSmoother takes over on desktop */
 }
 
 
