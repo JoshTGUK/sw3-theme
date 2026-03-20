@@ -1,59 +1,16 @@
 /* ══════════════════════════════════════════════════════════
-   SECTIONS CSS — Scroll Narrative Gradient Backgrounds
-   + Futuristic Glass-Morphism UI
-
-   Background flow (from branding outline):
-   S1: #1A1A2E navy    → #E8593C coral     (Dawn)
-   S2: #E8593C coral   → #F9A825 gold      (Sunrise)
-   S3: #F9A825 gold    → #87CEEB sky blue  (Morning)
-   S4: #87CEEB sky     → #4CAF50 green     (Daylight)
-   S5: #4CAF50 green   → #FF8F00 amber     (Afternoon)
-   S6: #FF8F00 amber   → #2D1B4E purple    (Golden hour)
-   S7: #2D1B4E purple  → #1A1A2E navy      (Evening)
+   SECTIONS CSS — Clean, surgical UI
+   Brand core: Greens + Black + White
+   Solar gold for CTAs/accents only
    ══════════════════════════════════════════════════════════ */
-
-
-/* ── Shared: Glass card component ── */
-.glass-card {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 16px;
-    padding: 32px 24px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.glass-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-}
-
-/* Glass on light backgrounds */
-.glass-card--light {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-}
-
-.glass-card--light:hover {
-    background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-/* Glass on dark backgrounds */
-.glass-card--dark {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
 
 
 /* ========================================
    SECTION 2: THE SUN'S POWER
-   Gradient: coral → gold (warm sunrise)
+   Background: White
    ======================================== */
 .sw3-section--sun {
-    background: linear-gradient(180deg, #E8593C 0%, #F0824A 30%, #F5A030 60%, #F9A825 100%);
+    background: var(--sw3-white);
     position: relative;
 }
 
@@ -92,15 +49,14 @@
 .sun-stats__title {
     font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--sw3-white);
+    color: var(--sw3-charcoal);
     margin-bottom: 12px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .sun-stats__subtitle {
     font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.15rem);
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--sw3-body);
     max-width: 500px;
     margin: 0 auto 48px;
 }
@@ -116,34 +72,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 16px;
+    gap: 6px;
+    background: var(--sw3-white);
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
     padding: 28px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sun-stat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .sun-stat .counter {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     font-weight: 700;
-    color: var(--sw3-white);
+    color: var(--sw3-green-dark);
     line-height: 1;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .sun-stat__unit {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--sw3-white);
+    color: var(--sw3-green-dark);
 }
 
 .sun-stat__label {
     font-family: var(--font-body);
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--sw3-body);
     max-width: 180px;
 }
 
@@ -164,19 +124,19 @@
 
 .sun-service-card {
     flex: 0 0 300px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 16px;
+    background: var(--sw3-white);
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
     padding: 32px 24px;
     text-align: left;
-    transition: transform 0.2s ease, background 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .sun-service-card:hover {
-    background: rgba(255, 255, 255, 0.22);
     transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: var(--sw3-green);
 }
 
 .sun-service-card__icon {
@@ -186,14 +146,14 @@
 .sun-service-card h3 {
     font-family: var(--font-display);
     font-size: 1.25rem;
-    color: var(--sw3-white);
+    color: var(--sw3-charcoal);
     margin-bottom: 8px;
 }
 
 .sun-service-card p {
     font-family: var(--font-body);
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--sw3-body);
     margin-bottom: 16px;
     line-height: 1.6;
 }
@@ -201,22 +161,20 @@
 .sun-service-card__link {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--sw3-white);
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    color: var(--sw3-green);
 }
 
 .sun-service-card__link:hover {
-    color: var(--sw3-navy);
+    color: var(--sw3-green-dark);
 }
 
 
 /* ========================================
    SECTION 3: CAPTURING THE LIGHT
-   Gradient: gold → sky blue (morning)
+   Background: Green tint
    ======================================== */
 .sw3-section--capture {
-    background: linear-gradient(180deg, #F9A825 0%, #CDBE5A 25%, #87CEEB 100%);
+    background: var(--sw3-green-tint);
 }
 
 .sw3-section--capture .sw3-section__inner {
@@ -239,16 +197,15 @@
 .capture-panel-wrap {
     position: relative;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: var(--sw3-white);
+    border: 1px solid #E0E0E0;
     border-radius: 16px;
     padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .capture-panel {
-    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
 }
 
 .capture-content {
@@ -260,7 +217,7 @@
 .capture-title {
     font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--sw3-charcoal);
+    color: var(--sw3-green-dark);
     margin-bottom: 16px;
 }
 
@@ -269,7 +226,6 @@
     font-size: clamp(1rem, 2vw, 1.1rem);
     color: var(--sw3-charcoal);
     line-height: 1.7;
-    opacity: 0.85;
 }
 
 .capture-diagram-wrap {
@@ -277,21 +233,20 @@
     z-index: 1;
     max-width: 500px;
     width: 100%;
-    background: rgba(26, 26, 46, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--sw3-white);
+    border: 1px solid #E0E0E0;
     border-radius: 16px;
     padding: 28px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 
 /* ========================================
    SECTION 4: ENERGY FLOWS HOME
-   Gradient: sky blue → green (daylight)
+   Background: White
    ======================================== */
 .sw3-section--flow {
-    background: linear-gradient(180deg, #87CEEB 0%, #6DB88D 40%, #4CAF50 100%);
+    background: var(--sw3-white);
 }
 
 .sw3-section--flow .sw3-section__inner {
@@ -307,14 +262,13 @@
 .flow-title {
     font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--sw3-white);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    color: var(--sw3-charcoal);
 }
 
 .flow-subtitle {
     font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.1rem);
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--sw3-body);
     max-width: 550px;
 }
 
@@ -323,13 +277,10 @@
     z-index: 1;
     max-width: 600px;
     width: 100%;
-    background: rgba(26, 26, 46, 0.8);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--sw3-green-dark);
     border-radius: 20px;
     padding: 32px;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(45, 106, 46, 0.2);
 }
 
 .flow-illustration {
@@ -349,17 +300,17 @@
 
 /* ========================================
    SECTION 5: STORAGE & INDEPENDENCE
-   Gradient: green → amber (afternoon)
+   Background: Dark green → black
    ======================================== */
 .sw3-section--storage {
     position: relative;
-    background: linear-gradient(180deg, #4CAF50 0%, #7AAF3E 25%, #B8962A 60%, #FF8F00 100%);
+    background: linear-gradient(180deg, var(--sw3-green-dark) 0%, #1a2e1b 50%, var(--sw3-charcoal) 100%);
 }
 
 .storage-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(26, 26, 46, 0.6) 0%, rgba(26, 26, 46, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
     opacity: 0;
     transition: opacity 0.1s ease;
     z-index: 0;
@@ -380,7 +331,7 @@
     height: 50px;
     border-radius: 50%;
     background: #e8e8d0;
-    box-shadow: 0 0 30px 8px rgba(232, 232, 208, 0.25);
+    box-shadow: 0 0 30px 8px rgba(232, 232, 208, 0.2);
     opacity: 0;
 }
 
@@ -416,13 +367,12 @@
     font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
     color: var(--sw3-white);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .storage-subtitle {
     font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.1rem);
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.75);
     max-width: 550px;
 }
 
@@ -436,10 +386,8 @@
 
 .storage-battery-wrap {
     position: relative;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 24px;
 }
@@ -447,7 +395,7 @@
 .storage-stats {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
     text-align: left;
 }
 
@@ -455,10 +403,8 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 20px 24px;
 }
@@ -480,7 +426,7 @@
 .storage-stat__label {
     font-family: var(--font-body);
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .storage-brands {
@@ -492,23 +438,16 @@
 
 .storage-brand {
     padding: 14px 24px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    transition: background 0.2s ease;
-}
-
-.storage-brand:hover {
-    background: rgba(255, 255, 255, 0.15);
 }
 
 .storage-brand__logo {
     font-family: var(--font-body);
     font-size: 14px;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -516,10 +455,10 @@
 
 /* ========================================
    SECTION 6: IMPACT & SAVINGS
-   Gradient: amber → dusk purple (golden hour)
+   Background: Green wash (light green)
    ======================================== */
 .sw3-section--impact {
-    background: linear-gradient(180deg, #FF8F00 0%, #C06A2B 30%, #6D3A5C 70%, #2D1B4E 100%);
+    background: var(--sw3-green-wash);
 }
 
 .sw3-section--impact .sw3-section__inner {
@@ -535,11 +474,10 @@
 .impact-title {
     font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--sw3-white);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: var(--sw3-green-dark);
 }
 
-/* Counter cards — glass */
+/* Counter cards */
 .impact-counters {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -549,58 +487,59 @@
 }
 
 .impact-counter {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
+    background: var(--sw3-white);
+    border: 1px solid var(--sw3-green-tint);
+    border-radius: 12px;
     padding: 40px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    transition: transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .impact-counter:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .impact-counter__symbol {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--sw3-gold);
+    color: var(--sw3-green-dark);
 }
 
 .impact-counter__number {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     font-weight: 700;
-    color: var(--sw3-white);
+    color: var(--sw3-green-dark);
     line-height: 1;
 }
 
 .impact-counter__unit {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--sw3-gold);
+    color: var(--sw3-green);
 }
 
 .impact-counter__label {
     font-family: var(--font-body);
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--sw3-body);
 }
 
-/* Before/After split — glass */
+/* Before/After split */
 .impact-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-width: 700px;
     width: 100%;
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .impact-split__before,
@@ -609,19 +548,12 @@
 }
 
 .impact-split__before {
-    background: rgba(229, 57, 53, 0.2);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(229, 57, 53, 0.3);
-    border-radius: 16px 0 0 16px;
+    background: var(--sw3-white);
+    border-right: 1px solid #E0E0E0;
 }
 
 .impact-split__after {
-    background: rgba(76, 175, 80, 0.2);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(76, 175, 80, 0.3);
-    border-radius: 0 16px 16px 0;
+    background: var(--sw3-green-tint);
     position: relative;
     overflow: hidden;
 }
@@ -634,8 +566,8 @@
     letter-spacing: 1px;
 }
 
-.impact-split__before h3 { color: #ff8a80; }
-.impact-split__after h3 { color: var(--sw3-green-light); }
+.impact-split__before h3 { color: #E53935; }
+.impact-split__after h3 { color: var(--sw3-green-dark); }
 
 .impact-bill {
     display: flex;
@@ -647,13 +579,13 @@
     font-family: var(--font-display);
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--sw3-white);
+    color: var(--sw3-charcoal);
 }
 
 .impact-bill__label {
     font-family: var(--font-body);
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--sw3-body);
 }
 
 .impact-bill__trend {
@@ -661,10 +593,10 @@
     font-weight: 600;
 }
 
-.impact-bill__trend--up { color: #ff8a80; }
-.impact-bill__trend--down { color: var(--sw3-green-light); }
+.impact-bill__trend--up { color: #E53935; }
+.impact-bill__trend--down { color: var(--sw3-green-dark); }
 
-/* Testimonials — glass */
+/* Testimonials */
 .impact-testimonials {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -674,24 +606,25 @@
 }
 
 .impact-testimonial {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
+    background: var(--sw3-white);
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
     padding: 32px 24px;
     text-align: left;
-    transition: transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 3px solid var(--sw3-green);
 }
 
 .impact-testimonial:hover {
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .impact-testimonial blockquote p {
     font-family: var(--font-accent);
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--sw3-charcoal);
     line-height: 1.6;
     font-style: italic;
     margin-bottom: 16px;
@@ -705,12 +638,12 @@
 
 .impact-testimonial cite strong {
     font-size: 0.9rem;
-    color: var(--sw3-white);
+    color: var(--sw3-charcoal);
 }
 
 .impact-testimonial cite span {
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--sw3-grey);
 }
 
 .impact-cta {
@@ -720,17 +653,17 @@
 
 /* ========================================
    SECTION 7: THE FUTURE
-   Gradient: purple → navy (evening bookend)
+   Background: Dark green (bookend)
    ======================================== */
 .sw3-section--future {
     position: relative;
-    background: linear-gradient(180deg, #2D1B4E 0%, #1F1538 50%, #1A1A2E 100%);
+    background: linear-gradient(180deg, var(--sw3-green-dark) 0%, #1a2e1b 60%, var(--sw3-charcoal) 100%);
 }
 
 .future-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 0%, rgba(232, 89, 60, 0.08) 50%, rgba(249, 168, 37, 0.05) 100%);
+    background: radial-gradient(ellipse at 50% 80%, rgba(249, 168, 37, 0.08) 0%, transparent 60%);
     opacity: 0;
     z-index: 0;
 }
@@ -779,16 +712,14 @@
 .future-counter .counter {
     font-family: var(--font-display);
     font-weight: 700;
-    color: var(--sw3-gold);
+    color: var(--sw3-green-light);
     font-size: 1.5em;
 }
 
 .future-cta {
     background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    border-radius: 16px;
     padding: 48px 40px;
     max-width: 500px;
     width: 100%;
@@ -820,7 +751,7 @@
 
 
 /* ========================================
-   RESPONSIVE — All Sections
+   RESPONSIVE
    ======================================== */
 @media (max-width: 768px) {
     .sun-stats__grid {
@@ -849,11 +780,13 @@
     }
 
     .impact-split__before {
-        border-radius: 16px 16px 0 0;
+        border-radius: 12px 12px 0 0;
+        border-right: none;
+        border-bottom: 1px solid #E0E0E0;
     }
 
     .impact-split__after {
-        border-radius: 0 0 16px 16px;
+        border-radius: 0 0 12px 12px;
     }
 
     .impact-testimonials {
