@@ -1,10 +1,6 @@
 ---
 deployment:
   tasks:
-    # UPDATE THIS PATH: Check cPanel > File Manager for your staging subdomain's document root
-    # Common patterns for subdomains on cPanel:
-    #   /home/$USER/staging.sw3greenenergy.co.uk/wp-content/themes/sw3-theme/
-    #   /home/$USER/public_html/staging/wp-content/themes/sw3-theme/
-    - export DEPLOYPATH=/home/$USER/staging.sw3greenenergy.co.uk/wp-content/themes/sw3-theme/
+    - export DEPLOYPATH=/home/swthreegreen/staging.sw3greenenergyservices.co.uk/wp-content/themes/sw3-theme/
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -R sw3-theme/* $DEPLOYPATH
