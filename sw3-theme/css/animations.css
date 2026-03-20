@@ -1,19 +1,24 @@
 /* ══════════════════════════════════════════════════════════
-   ANIMATIONS CSS — Initial hidden states + reduced motion
-   These CSS states prevent content from flashing before
-   GSAP loads and animates them into view.
+   ANIMATIONS CSS — Initial states + reduced motion
+
+   IMPORTANT: Hero content is VISIBLE by default.
+   Only non-hero [data-animate] elements are hidden.
+   This ensures the page is usable even if JS fails.
    ══════════════════════════════════════════════════════════ */
 
-/* ── Initial hidden states for all animated elements ── */
-[data-animate] {
+/* ── Non-hero animated elements start hidden ── */
+#section-sun [data-animate],
+#section-capture [data-animate],
+#section-flow [data-animate],
+#section-storage [data-animate],
+#section-impact [data-animate],
+#section-future [data-animate] {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
 }
 
 /* Diagram labels & paths (Section 3) */
-.diagram-label {
-    opacity: 0;
-}
+.diagram-label { opacity: 0; }
 
 .diagram-path {
     stroke-dasharray: 1000;
@@ -21,41 +26,30 @@
 }
 
 /* Energy particles (Section 4) */
-.energy-particle {
-    opacity: 0;
-}
+.energy-particle { opacity: 0; }
 
 /* Community elements (Section 7) */
 .community-house:not(.community-house--main),
-.community-tree {
-    opacity: 0;
-}
+.community-tree { opacity: 0; }
 
 /* Moon and stars (Section 5) */
 .storage-moon,
-.storage-star {
-    opacity: 0;
-}
+.storage-star { opacity: 0; }
 
 /* Battery fill starts at 0 */
-.battery-fill {
-    height: 0;
-}
+.battery-fill { height: 0; }
 
 
 /* ══════════════════════════════════════════════════════════
-   REDUCED MOTION — Accessibility override
-   When the OS or user requests reduced motion,
-   show all content immediately in its final state.
+   REDUCED MOTION
    ══════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
-    /* Reveal everything */
-    [data-animate],
-    .hero-headline,
-    .hero-subtext,
-    .hero-cta,
-    .hero-badges,
-    .hero-scroll,
+    #section-sun [data-animate],
+    #section-capture [data-animate],
+    #section-flow [data-animate],
+    #section-storage [data-animate],
+    #section-impact [data-animate],
+    #section-future [data-animate],
     .diagram-label,
     .energy-particle,
     .community-house,
@@ -67,43 +61,28 @@
         transition: none !important;
     }
 
-    /* Show diagram paths fully drawn */
     .diagram-path,
     .flow-energy-path,
     .sun-rays-svg .sun-ray {
         stroke-dashoffset: 0 !important;
     }
 
-    /* Show battery full */
     .battery-fill {
         height: 280px !important;
-        y: 25px !important;
     }
 
-    /* Show all rooms lit */
     .flow-room {
         fill: var(--sw3-gold) !important;
         opacity: 0.7 !important;
     }
 
-    /* Show backgrounds in final state */
-    .storage-bg {
-        opacity: 0.6 !important;
-    }
+    .storage-bg { opacity: 0.6 !important; }
+    .future-bg { opacity: 0.4 !important; }
+    .hero-bg__layer--mid { opacity: 0.5 !important; }
+    .hero-bg__layer--glow { opacity: 0.5 !important; }
 
-    .future-bg {
-        opacity: 0.4 !important;
-    }
+    .hero-scroll { animation: none !important; }
 
-    .hero-bg__layer--mid {
-        opacity: 0.5 !important;
-    }
-
-    .hero-bg__layer--glow {
-        opacity: 0.5 !important;
-    }
-
-    /* Disable all CSS transitions/animations */
     * {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
@@ -111,18 +90,8 @@
     }
 }
 
-
-/* ══════════════════════════════════════════════════════════
-   ANIMATION TOGGLE OFF STATE
-   When user clicks the "Animations: Off" button,
-   the JS adds this class to body.
-   ══════════════════════════════════════════════════════════ */
+/* ── Animation toggle off ── */
 body.animations-off [data-animate],
-body.animations-off .hero-headline,
-body.animations-off .hero-subtext,
-body.animations-off .hero-cta,
-body.animations-off .hero-badges,
-body.animations-off .hero-scroll,
 body.animations-off .diagram-label,
 body.animations-off .energy-particle,
 body.animations-off .community-house,
@@ -131,4 +100,8 @@ body.animations-off .storage-moon,
 body.animations-off .storage-star {
     opacity: 1 !important;
     transform: none !important;
+}
+
+body.animations-off .hero-scroll {
+    animation: none !important;
 }
