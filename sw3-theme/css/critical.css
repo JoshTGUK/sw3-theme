@@ -263,31 +263,35 @@
     inset: 0;
 }
 
+/* S1 gradient: #1A1A2E navy → #E8593C sunrise coral */
 .hero-bg__layer--sky {
-    background: linear-gradient(180deg, #0D0D1A 0%, #1A1A2E 40%, #2D1B4E 70%, #1A1A2E 100%);
+    background: linear-gradient(180deg, #0D0D1A 0%, #1A1A2E 30%, #2D1B4E 60%, #3D1B3A 80%, #1A1A2E 100%);
 }
 
 .hero-bg__layer--mid {
-    background: linear-gradient(180deg, transparent 0%, rgba(232, 89, 60, 0.0) 50%, rgba(232, 89, 60, 0.15) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(232, 89, 60, 0.0) 40%, rgba(232, 89, 60, 0.25) 100%);
     opacity: 0;
 }
 
 .hero-bg__layer--glow {
-    background: radial-gradient(ellipse at 50% 100%, rgba(249, 168, 37, 0.2) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 50% 100%, rgba(232, 89, 60, 0.35) 0%, rgba(249, 168, 37, 0.15) 40%, transparent 70%);
     opacity: 0;
 }
 
-/* Sun — Solar Gold */
+/* Sun — Solar Gold with stronger glow */
 .hero-sun {
     position: absolute;
     bottom: -60px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    background: radial-gradient(circle, #FDD835 0%, #F9A825 50%, #FF8F00 100%);
-    box-shadow: 0 0 60px 20px rgba(249, 168, 37, 0.4), 0 0 120px 40px rgba(249, 168, 37, 0.2);
+    background: radial-gradient(circle, #FDD835 0%, #F9A825 40%, #FF8F00 70%, #E65100 100%);
+    box-shadow:
+        0 0 60px 20px rgba(249, 168, 37, 0.5),
+        0 0 120px 50px rgba(232, 89, 60, 0.25),
+        0 0 200px 80px rgba(230, 81, 0, 0.1);
     z-index: 1;
 }
 
