@@ -2,6 +2,10 @@
 
 <!-- ═══════════ HERO ═══════════ -->
 <section id="section-hero" class="hero" aria-label="Welcome">
+    <!-- Sun glow (CSS animated) -->
+    <div class="hero__sun" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
+
     <div class="hero__inner">
         <p class="hero__tag">South East England's Trusted Solar Installer</p>
         <h1 class="hero__title">Power Your Future<br>With <span class="hero__green">Sunshine</span></h1>

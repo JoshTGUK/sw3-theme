@@ -34,18 +34,16 @@ function sw3_enqueue_styles() {
         null
     );
 
-    // Global styles
-    wp_enqueue_style( 'sw3-global',    $theme_dir . '/css/global.css',    array( 'sw3-satoshi' ), $theme_version );
-    wp_enqueue_style( 'sw3-sections',  $theme_dir . '/css/sections.css',  array( 'sw3-global' ),       $theme_version );
-    wp_enqueue_style( 'sw3-animations',$theme_dir . '/css/animations.css',array( 'sw3-sections' ),     $theme_version );
+    // Global styles — NO dependencies between them (prevents cascade failure)
+    wp_enqueue_style( 'sw3-global',     $theme_dir . '/css/global.css',     array(), $theme_version );
+    wp_enqueue_style( 'sw3-sections',   $theme_dir . '/css/sections.css',   array(), $theme_version );
+    wp_enqueue_style( 'sw3-animations', $theme_dir . '/css/animations.css', array(), $theme_version );
 }
 add_action( 'wp_enqueue_scripts', 'sw3_enqueue_styles' );
 
 
-// ── Inline Critical CSS (front page only) ────────────────────
+// ── Inline Critical CSS (ALL pages — contains :root variables) ──
 function sw3_inline_critical_css() {
-    if ( ! is_front_page() ) return;
-
     $critical_css_path = get_template_directory() . '/css/critical.css';
     if ( file_exists( $critical_css_path ) ) {
         echo '<style id="sw3-critical">' . file_get_contents( $critical_css_path ) . '</style>';
