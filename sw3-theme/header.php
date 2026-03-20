@@ -50,9 +50,4 @@
     </div>
 </nav>
 
-<!-- ScrollSmoother wrapper (desktop only — JS inits ScrollSmoother on these) -->
-<div id="smooth-wrapper">
-<div id="smooth-content">
-
-<!-- Main content start -->
 <main id="main-content">

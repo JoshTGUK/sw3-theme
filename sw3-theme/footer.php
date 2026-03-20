@@ -62,9 +62,6 @@
     </div>
 </footer>
 
-</div><!-- /#smooth-content -->
-</div><!-- /#smooth-wrapper -->
-
 <?php wp_footer(); ?>
 </body>
 </html>
