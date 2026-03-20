@@ -1,16 +1,18 @@
 /* ══════════════════════════════════════════════════════════
    SECTIONS CSS — Visual styles for all 7 homepage sections
-   No animations here — just colours, positioning, typography.
-   Updated to SW3 brand 2026 colour system.
+   Background flow: Dark hero → White → Off-white → White →
+   Navy (storage night) → Green wash → Navy (future bookend)
    ══════════════════════════════════════════════════════════ */
 
 
 /* ========================================
    SECTION 2: THE SUN'S POWER
+   Background: White
    ======================================== */
 .sw3-section--sun {
-    background: var(--sw3-navy);
+    background: var(--sw3-white);
     position: relative;
+    border-top: 1px solid #E8E8E8;
 }
 
 .sw3-section--sun .sw3-section__inner {
@@ -48,14 +50,14 @@
 .sun-stats__title {
     font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--sw3-white);
+    color: var(--sw3-charcoal);
     margin-bottom: 12px;
 }
 
 .sun-stats__subtitle {
     font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.15rem);
-    color: var(--sw3-grey);
+    color: var(--sw3-body);
     max-width: 500px;
     margin: 0 auto 48px;
 }
@@ -77,21 +79,21 @@
 .sun-stat .counter {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    font-weight: 900;
-    color: var(--sw3-gold);
+    font-weight: 700;
+    color: var(--sw3-green-dark);
     line-height: 1;
 }
 
 .sun-stat__unit {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--sw3-gold);
+    color: var(--sw3-green-dark);
 }
 
 .sun-stat__label {
     font-family: var(--font-body);
     font-size: 0.85rem;
-    color: var(--sw3-grey);
+    color: var(--sw3-body);
     max-width: 180px;
 }
 
@@ -112,17 +114,18 @@
 
 .sun-service-card {
     flex: 0 0 300px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--sw3-white);
+    border: 1px solid #E8E8E8;
     border-radius: 12px;
     padding: 32px 24px;
     text-align: left;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .sun-service-card:hover {
-    border-color: rgba(249, 168, 37, 0.2);
-    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 .sun-service-card__icon {
@@ -132,34 +135,35 @@
 .sun-service-card h3 {
     font-family: var(--font-display);
     font-size: 1.25rem;
-    color: var(--sw3-white);
+    color: var(--sw3-charcoal);
     margin-bottom: 8px;
 }
 
 .sun-service-card p {
     font-family: var(--font-body);
     font-size: 0.9rem;
-    color: var(--sw3-grey);
+    color: var(--sw3-body);
     margin-bottom: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .sun-service-card__link {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--sw3-gold);
+    color: var(--sw3-green);
 }
 
 .sun-service-card__link:hover {
-    color: var(--sw3-amber);
+    color: var(--sw3-green-dark);
 }
 
 
 /* ========================================
    SECTION 3: CAPTURING THE LIGHT
+   Background: Off-white
    ======================================== */
 .sw3-section--capture {
-    background: linear-gradient(180deg, var(--sw3-navy) 0%, var(--sw3-charcoal) 100%);
+    background: var(--sw3-off-white);
 }
 
 .sw3-section--capture .sw3-section__inner {
@@ -185,7 +189,7 @@
 }
 
 .capture-panel {
-    filter: drop-shadow(0 4px 30px rgba(26, 26, 46, 0.5));
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
 }
 
 .capture-content {
@@ -197,14 +201,14 @@
 .capture-title {
     font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--sw3-white);
+    color: var(--sw3-charcoal);
     margin-bottom: 16px;
 }
 
 .capture-text {
     font-family: var(--font-body);
     font-size: clamp(1rem, 2vw, 1.1rem);
-    color: var(--sw3-grey);
+    color: var(--sw3-body);
     line-height: 1.7;
 }
 
@@ -213,14 +217,19 @@
     z-index: 1;
     max-width: 500px;
     width: 100%;
+    background: var(--sw3-white);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 
 /* ========================================
    SECTION 4: ENERGY FLOWS HOME
+   Background: White
    ======================================== */
 .sw3-section--flow {
-    background: var(--sw3-off-white);
+    background: var(--sw3-white);
 }
 
 .sw3-section--flow .sw3-section__inner {
@@ -251,6 +260,10 @@
     z-index: 1;
     max-width: 600px;
     width: 100%;
+    background: var(--sw3-navy);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
 }
 
 .flow-illustration {
@@ -271,6 +284,7 @@
 
 /* ========================================
    SECTION 5: STORAGE & INDEPENDENCE
+   Background: Navy (the "night" section)
    ======================================== */
 .sw3-section--storage {
     position: relative;
@@ -280,7 +294,7 @@
 .storage-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, var(--sw3-dusk) 0%, var(--sw3-navy) 100%);
+    background: linear-gradient(180deg, var(--sw3-charcoal) 0%, var(--sw3-navy) 100%);
     opacity: 0;
     transition: opacity 0.1s ease;
     z-index: 0;
@@ -374,7 +388,7 @@
 .storage-stat .counter {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 900;
+    font-weight: 700;
     color: var(--sw3-green);
     line-height: 1;
 }
@@ -402,10 +416,11 @@
     padding: 16px 28px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .storage-brand__logo {
+    font-family: var(--font-body);
     font-size: 14px;
     font-weight: 700;
     color: var(--sw3-grey);
@@ -416,6 +431,7 @@
 
 /* ========================================
    SECTION 6: IMPACT & SAVINGS
+   Background: Light green wash
    ======================================== */
 .sw3-section--impact {
     background: var(--sw3-green-wash);
@@ -460,14 +476,14 @@
 
 .impact-counter__symbol {
     font-size: 1.5rem;
-    font-weight: 900;
+    font-weight: 700;
     color: var(--sw3-green-dark);
 }
 
 .impact-counter__number {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 6vw, 3.5rem);
-    font-weight: 900;
+    font-weight: 700;
     color: var(--sw3-green-dark);
     line-height: 1;
 }
@@ -501,14 +517,14 @@
 }
 
 .impact-split__before {
-    background: rgba(255, 50, 50, 0.08);
-    border: 1px solid rgba(255, 50, 50, 0.15);
+    background: var(--sw3-white);
+    border: 1px solid #E8E8E8;
     border-radius: 12px 0 0 12px;
 }
 
 .impact-split__after {
-    background: var(--sw3-green-wash);
-    border: 1px solid var(--sw3-green-tint);
+    background: var(--sw3-green-tint);
+    border: 1px solid var(--sw3-green);
     border-radius: 0 12px 12px 0;
     position: relative;
     overflow: hidden;
@@ -523,7 +539,7 @@
 }
 
 .impact-split__before h3 {
-    color: #ff6b6b;
+    color: #E53935;
 }
 
 .impact-split__after h3 {
@@ -539,7 +555,7 @@
 .impact-bill__amount {
     font-family: var(--font-display);
     font-size: 2.5rem;
-    font-weight: 900;
+    font-weight: 700;
     color: var(--sw3-charcoal);
 }
 
@@ -555,11 +571,11 @@
 }
 
 .impact-bill__trend--up {
-    color: #ff6b6b;
+    color: #E53935;
 }
 
 .impact-bill__trend--down {
-    color: var(--sw3-green);
+    color: var(--sw3-green-dark);
 }
 
 /* Testimonials */
@@ -573,7 +589,7 @@
 
 .impact-testimonial {
     background: var(--sw3-white);
-    border: 1px solid var(--sw3-green-tint);
+    border: 1px solid #E8E8E8;
     border-radius: 12px;
     padding: 32px 24px;
     text-align: left;
@@ -582,7 +598,7 @@
 
 .impact-testimonial blockquote p {
     font-family: var(--font-accent);
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--sw3-charcoal);
     line-height: 1.6;
     font-style: italic;
@@ -612,6 +628,7 @@
 
 /* ========================================
    SECTION 7: THE FUTURE
+   Background: Navy (bookend)
    ======================================== */
 .sw3-section--future {
     position: relative;
@@ -669,14 +686,14 @@
 
 .future-counter .counter {
     font-family: var(--font-display);
-    font-weight: 900;
+    font-weight: 700;
     color: var(--sw3-gold);
     font-size: 1.5em;
 }
 
 .future-cta {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 12px;
     padding: 48px 40px;
     max-width: 500px;
@@ -699,6 +716,7 @@
 .future-cta__phone {
     margin-top: 16px;
     font-size: 0.9rem;
+    color: var(--sw3-grey);
 }
 
 .future-cta__phone a {
@@ -758,5 +776,9 @@
 
     .future-cta {
         padding: 32px 24px;
+    }
+
+    .flow-illustration-wrap {
+        padding: 16px;
     }
 }
